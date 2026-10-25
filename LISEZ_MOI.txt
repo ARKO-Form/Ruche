@@ -1,0 +1,52 @@
+RUCHEPILOT - VERSION 1.0 - 25 OCTOBRE 2026
+=========================================
+
+DEMARRAGE RAPIDE SUR ORDINATEUR
+1. Décompresser l'archive ZIP dans un dossier.
+2. Double-cliquer sur index.html : l'application s'ouvre dans le navigateur.
+3. Pour un fonctionnement plus stable (et pour la fonction hors connexion d'une PWA),
+   ouvrir DEMARRER_WINDOWS.bat si Python est installé.
+   Adresse : http://localhost:8765
+4. À l'ouverture : sélectionner « Mes propres ruches » si tu ne veux pas tester les données fictives.
+   Sinon, dans Données, cliquer sur « Recharger la démo ».
+
+POUR INSTALLER SUR IPHONE OU ANDROID
+La vraie installation PWA nécessite d'héberger ces fichiers via HTTPS sur un
+hébergement de confiance. Une fois publiés, utiliser « Ajouter à l'écran d'accueil »
+(Partager sur iPhone, menu du navigateur sur Android).
+Ouvrir directement index.html dans Fichiers sur iPhone n'est pas une méthode
+fiable pour enregistrer les données : ne pas l'utiliser pour les vraies ruches.
+
+FONCTIONNALITÉS
+- Ruchers, ruches et colonies identifiés séparément
+- Visites : population, couvain, réserves, reine, observations
+- Analyse indicative : réserves faibles, couvain absent, baisse d'occupation
+- Nourrissements planifiés/effectués avec contrôle programmé
+- Traitements : produit, lot, dose, dates, statut, rappel de vérification
+- Tâches : échéances, rappels internes, marquage terminé
+- Météo par rucher avec coordonnées GPS via Open-Meteo (Internet requis)
+- Accès direct au site La Météo Agricole, sans import automatique de leurs données
+- Sauvegardes JSON : export / import, sans compte et sans serveur
+
+IMPORTANT - DONNÉES
+- L'application sauvegarde dans le navigateur, sur un seul appareil.
+- Pas de synchronisation entre PC et smartphone, ni de sauvegarde cloud.
+- L'effacement des données navigateur efface les données de l'application.
+- Exporte régulièrement une sauvegarde dans l'onglet « Données ».
+- L'origine change si tu passes de file:// à http://localhost ou à un site HTTPS :
+  il faudra exporter depuis la première origine, puis importer sur la seconde.
+- Ne publie pas tes sauvegardes JSON ni tes coordonnées exactes de ruchers.
+- Pas de compte/mot de passe dans cette V1 : les données sont locales.
+
+LIMITES DE LA V1
+- Pas de notifications push lorsque l'application est fermée.
+- Pas de QR code opérationnel (accès par la liste et la recherche).
+- Pas de registre réglementaire complet, ni de gestion vétérinaire validée.
+- Les conseils affichés sont indicatifs, non des diagnostics de maladie.
+- Ne pas choisir les durées/doses de traitement d'après ce logiciel : utiliser la notice.
+- Open-Meteo est intégré uniquement pour les tests/personnel non commercial :
+  licences commerciales à étudier avant distribution commerciale.
+- La Météo Agricole est accessible par un lien externe, pas encore intégrée.
+
+CONTACT TECHNIQUE / VERSION
+Livrable de démonstration fonctionnelle, non audité pour une distribution commerciale.
