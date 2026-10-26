@@ -1,5 +1,8 @@
-// BeeTend 1.2.1 – mise à jour sans suppression des données locales.
-const CACHE='beetend-v121-20261026';
-self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.add('./index.html')).catch(()=>{}).then(()=>self.skipWaiting())));
-self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>(k.startsWith('beetend-')||k.startsWith('ruchepilot-'))&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
-self.addEventListener('fetch',e=>{const req=e.request;if(req.method!=='GET'||new URL(req.url).origin!==self.location.origin)return;e.respondWith(fetch(req).then(res=>{if(res.ok&&(req.mode==='navigate'||new URL(req.url).pathname.endsWith('/index.html'))){const c=res.clone();caches.open(CACHE).then(cache=>cache.put('./index.html',c)).catch(()=>{})}return res}).catch(()=>caches.match(req).then(r=>r||(req.mode==='navigate'?caches.match('./index.html'):Response.error()))))});
+const CACHE='beetend-v130-cache';
+self.addEventListener('install',e=>{self.skipWaiting()});
+self.addEventListener('activate',e=>{e.waitUntil((async()=>{const keys=await caches.keys();await Promise.all(keys.filter(k=>k.startsWith('beetend-')&&k!==CACHE).map(k=>caches.delete(k)));await self.clients.claim()})())});
+self.addEventListener('fetch',e=>{
+ const req=e.request;if(req.method!=='GET'||new URL(req.url).origin!==self.location.origin)return;
+ if(req.mode==='navigate'||new URL(req.url).pathname.endsWith('/index.html')){e.respondWith(fetch(req).then(resp=>{if(resp.ok){const copy=resp.clone();caches.open(CACHE).then(c=>c.put(req,copy))}return resp}).catch(()=>caches.match(req)));return}
+ e.respondWith(fetch(req).then(resp=>{if(resp.ok){let clone=resp.clone();caches.open(CACHE).then(c=>c.put(req,clone))}return resp}).catch(()=>caches.match(req)));
+});
