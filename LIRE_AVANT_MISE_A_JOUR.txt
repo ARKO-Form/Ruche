@@ -1,17 +1,21 @@
-BEETEND V1.2 — À LIRE AVANT DE PUBLIER
+BEETEND V1.2.1 — ANALYSE VISIBLE DANS LA FICHE COLONIE
 
-1. IMPORTANT : ouvrir BeeTend dans le même Safari ou la même application iPhone, onglet Données, exporter en JSON.
-2. Vérifier le fichier immédiatement avec « Vérifier mon fichier de sauvegarde ». Attendre « Sauvegarde vérifiée : identique aux données actuelles ».
-3. Conserver le JSON dans Fichiers, ET dans un deuxième emplacement (iCloud Drive, par exemple).
-4. NE PAS supprimer l’application de l’écran d’accueil, ni effacer les données Safari, ni changer le nom du dépôt GitHub.
-5. Décompresser ce ZIP et téléverser les fichiers de son dossier à la racine du dépôt GitHub ARKO-Form/Ruche, puis Commit changes.
-6. Ouvrir l’adresse existante dans Safari : arko-form.github.io/Ruche/index.html?v=120
-7. Vérifier la présence des ruchers, colonies, visites, nourrissements, traitements et tâches.
-8. Tester les analyses en ouvrant la fiche d’une colonie ayant plusieurs visites. La création de tâche exige une confirmation.
+Changements :
+- Nouvel onglet 🔎 Analyse dans chaque fiche de ruche.
+- Bouton visible « Voir l’analyse de ma colonie » depuis Vue générale.
+- Après la saisie d’une visite, BeeTend affiche immédiatement l’analyse.
+- Une visite suffit pour un premier bilan ; deux visites ou plus pour la comparaison.
+- Aucune modification des fiches, des visites, des tâches ni de la structure de stockage.
 
-RÈGLES IMPORTANTES
-- Le logiciel conserve la clé locale ruchepilot_v1_data_2026 et le schéma de données version 1.
-- La mise à jour ne sauvegarde PAS les données dans GitHub : GitHub héberge uniquement le code public.
-- Aucune sauvegarde cloud automatique ni notification push en arrière-plan n'est disponible dans cette version.
-- Vérifier un fichier JSON ne remplace ni n’importe aucune donnée.
-- Ne pas faire de saisies réelles dans la version démo.
+SAUVEGARDE ET INSTALLATION
+1. Depuis l'application iPhone que tu utilises réellement : Données -> Exporter en JSON.
+2. Conserve une copie dans Fichiers ET une seconde dans iCloud ou un ordinateur.
+3. Vérifie le fichier dans l'application avant la mise à jour. Ne clique pas sur Importer.
+4. Sur GitHub dans le dépôt Ruche, remplace les fichiers existants par ceux du dossier décompressé, et Commit changes.
+5. Ouvre arko-form.github.io/Ruche/index.html?v=121 dans Safari.
+6. Ouvre une ruche : tu dois voir le nouvel onglet « 🔎 Analyse ».
+7. Vérifie ensuite que les anciennes données (ruches, visites, tâches) sont conservées.
+
+IMPORTANT : GitHub héberge les fichiers de l'application, pas les données enregistrées.
+Ne supprime pas l'application iPhone et n'efface pas les données de Safari.
+Cette version n'ajoute pas de sauvegarde cloud ni d'intelligence artificielle connectée.
