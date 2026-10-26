@@ -1,18 +1,20 @@
-BeeTend V1.1.3 – Changement sans effacement des données
+BeeTend V1.1.4 — Gestion des tâches par rucher + rappels
 
-1. SUR L'ANCIENNE APPLICATION : ouvre « Données » > « Exporter en JSON » et conserve le fichier dans Fichiers.
-2. Décompresse cette archive sur ton téléphone.
-3. Sur GitHub, dans le dépôt ARKO-Form/Ruche, envoie les fichiers DÉCOMPRESSÉS à la racine (index.html, manifest.webmanifest, sw.js et fichiers PNG). Ne mets pas le ZIP.
-4. Enregistre via Commit changes.
-5. Dans Safari, ouvre arko-form.github.io/Ruche/index.html?v=113 puis actualise.
-6. Vérifie que tes anciennes colonies et visites apparaissent AVANT de faire de nouvelles saisies.
+IMPORTANT : EXPORTER UNE SAUVEGARDE JSON AVANT LA MISE À JOUR.
 
-La clé de stockage localStorage est volontairement inchangée : ruchepilot_v1_data_2026. Aucun effacement ou migration destructive n'est exécuté. Les anciennes valeurs « réservesFrames » restent dans les sauvegardes/historiques bruts, mais ne sont plus demandées ou affichées.
+1. Dans BeeTend V1.1.3 : Données → Exporter en JSON.
+2. Sur iPhone, télécharger puis décompresser BeeTend_V1_1_4_GitHub.zip.
+3. Dans le dépôt GitHub ARKO-Form / Ruche, remplacer les fichiers à la racine : index.html, manifest.webmanifest, sw.js, icônes et images.
+4. Valider Commit changes, et ouvrir Safari : arko-form.github.io/Ruche/index.html?v=114
+5. Ne pas supprimer l’ancienne icône ni effacer les données Safari avant de vérifier les ruches et les visites.
 
-Fonctionnalités :
-- « Colonie morte » depuis la fiche ; date, cause probable et commentaire, sans suppression de l'historique.
-- « Non évalué » pour le nombre de cadres occupés et de couvain (différent de 0).
-- Suppression de la saisie « équivalents cadres de réserves » ; maintien de l'état qualitatif des réserves.
-- Correction possible en cas de déclaration de mort par erreur ; tâches annulées non réactivées automatiquement.
+Nouveautés :
+- Tâche pour tout un rucher ou une seule ruche, choix du rucher en premier.
+- Filtre des tâches par rucher, modification et suppression réversible.
+- Alertes visibles dans l’application à échéance.
+- Notification système uniquement lorsque BeeTend est ouverte et si le navigateur le permet, après autorisation explicite.
+- Export .ics compatible calendrier (nécessite un import dans une application calendrier, pas de synchronisation automatique).
 
-IMPORTANT : ne désinstalle pas l'application iPhone, ne supprime pas le site Safari et n'efface pas les données du navigateur sans sauvegarde.
+ATTENTION : GitHub Pages seul ne permet pas d’envoyer des notifications push quand l’application est fermée. Il faudra ajouter un backend d’envoi de notifications pour cela.
+
+La clé de stockage reste ruchepilot_v1_data_2026. Aucune réinitialisation automatique.
