@@ -1,10 +1,10 @@
-// BeeTend 1.1.2 – network-first update so users do not stay on stale RuchePilot assets.
-const CACHE = 'beetend-v112-20261026';
+// BeeTend 1.1.3 – network-first update so users do not stay on stale RuchePilot assets.
+const CACHE = 'beetend-v113-20261026';
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.add('./index.html')).catch(()=>{}).then(()=>self.skipWaiting()));
 });
 self.addEventListener('activate', event => {
-  event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()));
+  event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>(key.startsWith('beetend-')||key.startsWith('ruchepilot-'))&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()));
 });
 self.addEventListener('fetch', event => {
   const req=event.request;
